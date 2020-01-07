@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/reusable_card.dart';
+import 'package:flutter_app/components/reusable_card.dart';
 
-import 'bottom_button.dart';
-import 'constants.dart';
+import '../components/bottom_button.dart';
+import '../utils/constants.dart';
 
 class ResultPage extends StatelessWidget {
   ResultPage(

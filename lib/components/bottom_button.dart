@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'constants.dart';
+import '../utils/constants.dart';
 
 class BottomButton extends StatelessWidget {
   final String buttonText;
