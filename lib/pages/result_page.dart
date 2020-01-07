@@ -6,14 +6,15 @@ import '../components/bottom_button.dart';
 import '../utils/constants.dart';
 
 class ResultPage extends StatelessWidget {
-  ResultPage(
-      {@required this.interpretation,
-      @required this.bmiResult,
-      @required this.resultText});
+  ResultPage({
+    @required this.bmiResult,
+    @required this.resultText,
+    @required this.feedback,
+  });
 
   final String bmiResult;
   final String resultText;
-  final String interpretation;
+  final String feedback;
 
   @override
   Widget build(BuildContext context) {
@@ -34,18 +35,15 @@ class ResultPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'AD',
-//                    resultText.toUpperCase(),
+                    resultText.toUpperCase(),
                     style: kResultTextStyle,
                   ),
                   Text(
-                    'ads',
-//                    bmiResult,
+                    bmiResult,
                     style: kBMITextStyle,
                   ),
                   Text(
-                    'ada',
-//                    interpretation,
+                    feedback,
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   ),

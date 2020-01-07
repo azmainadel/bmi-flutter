@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/components/bottom_button.dart';
 import 'package:flutter_app/components/reusable_card.dart';
 import 'package:flutter_app/components/round_button.dart';
+import 'package:flutter_app/pages/result_page.dart';
+import 'package:flutter_app/utils/calculator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../components/icon_content.dart';
@@ -225,7 +227,16 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             buttonText: 'CALCULATE',
             onTap: () {
-              Navigator.pushNamed(context, '/result');
+              Calculator calculator = new Calculator(
+                  height: selectedHeight, weight: selectedWeight);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ResultPage(
+                            bmiResult: calculator.calculateBMI(),
+                            resultText: calculator.getResult(),
+                            feedback: calculator.getFeedback(),
+                          )));
             },
           ),
         ],
